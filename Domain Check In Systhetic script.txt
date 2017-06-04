@@ -1,0 +1,9 @@
+var assert = require('assert');
+
+$browser.get('https://google.com').then(function(){
+  $browser.getCurrentUrl().then(function(url) {
+    if(url.indexOf('google.com') === -1) {
+      assert(false, 'url should contain google.com')
+    }
+  })
+})
